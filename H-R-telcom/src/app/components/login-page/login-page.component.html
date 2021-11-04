@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <ngb-alert [dismissible]="false" *ngIf="showAlert" type="danger">
+    <strong>Login failed!</strong> Please provide valid Username and Password
+  </ngb-alert>
+  <div class="form-content">
+    
+    <div class="form-header">
+      <h3>Login</h3>
+    <hr>
+    </div>
+    <form (ngSubmit)="handleSubmit()">
+      <input type="text" id="login" name="login" placeholder="Username" [(ngModel)]="username">
+      <input type="password" id="password" name="login" placeholder="Passowrd" [(ngModel)]="password">
+      <input type="submit"  class="btn btn-primary btn-lg"value= Login>
+    </form>
+
+    
+    <div class="form-footer">
+      <a [routerLink]="['/new-user']">New User</a>
+    </div>
+  </div>
+</div>
