@@ -10,7 +10,7 @@ import { PlanesComponent } from './components/planes/planes.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/user-account', pathMatch: 'full' },
+  {path: '', redirectTo: '/login-form', pathMatch: 'full' },
   {path:"user-account",component:UserAccountComponent},
   {path:"new-user",component:NewUserComponent},
   {path:"login-form",component:LoginPageComponent},

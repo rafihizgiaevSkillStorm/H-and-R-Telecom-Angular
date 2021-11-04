@@ -8,7 +8,7 @@ import { Lines } from './models/Lines';
 })
 export class LinesService {
 
-  url ='http://localhost:8080/UserPlanLine/v1';
+  url ='https://api-hrwireless.azurewebsites.net/UserPlanLine/v1';
 
   constructor(private httpClient: HttpClient) { }
 
