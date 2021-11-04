@@ -23,7 +23,7 @@ export class CreateLinesComponent implements OnInit {
   phoneNumbers : Number[] = [];
   devices : Device[] = [];
   lines : Lines[] = [];
-  nickname : string = "";
+  nickname : string = "Plan Doe";
   userPlan?:UserPlan;
   numbers: number[]= [];
   constructor(private lineService:LinesService, private route:Router, private deviceService : DeviceService, private location:Location, private dataService : DataService, private userPlanService:UserPlanService ) { }
@@ -77,63 +77,39 @@ saveLines():void{
    let user:User = this.dataService.sharedUser;
   this.userPlanService.userPlan.user = user;
     this.userPlanService.userPlan.nickname = this.nickname;
+    this.userPlanService.userPlan.plan = this.plan;
     this.userPlanService.createUserPlan().subscribe(result => {
       this.userPlan = result;
-      console.log(result);
+     
         
     
   // the user clicked ok
-   this.route.navigate(['/', 'user-account']);
-    
-    
     for( let i = 0; i < this.plan.numberOfLines; i++){
       this.lines[i].userplan_Id = this.userPlan?.id
    }
 
     this.lineService.saveLines(this.lines).subscribe(result =>{
       this.lines = result;
-     
-  
-     
+      this.userPlan!.lines=this.lines;
+      this.userPlanService.userPlan = this.userPlan!;
+      this.dataService.sharedUser.userPlans?.push(this.userPlanService.userPlan);
     });
+    
     });
+    this.route.navigate(['/', 'user-account']);
   } else {
   // the user clicked cancel or closed the confirm dialog so we do nothing...
-
     }
   }
 
 }
 refreshPhoneNumbers(){
-let user:User = this.dataService.sharedUser;
-this.userPlanService.userPlan.user = user;
-  this.userPlanService.userPlan.nickname = this.nickname;
-  this.userPlanService.createUserPlan().subscribe(result => {
-    this.userPlan = result;
-  });
-  for( let i = 0; i < this.plan.numberOfLines; i++){
-    let newLine : Lines = {
-     userplan_Id: this.userPlan?.id
-   }
-   this.lines.push(newLine);
- }
-
-
-
   this.lineService.generatePhoneNumbers().subscribe(result =>{
       this.phoneNumbers = result;
     });
 
     
 }
-
-// removeNumber(i : number):void{
- 
-//  const index = this.phoneNumbers.indexOf(i, 0);
-// if (index > -1) {
-//   this.phoneNumbers.splice(index, 1);
-// }
-//  }
 
 
 }
