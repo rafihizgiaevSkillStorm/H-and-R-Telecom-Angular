@@ -1,3 +1,4 @@
+<div *ngIf="isLoaded">
 <div class="container">
   <p>
     <a [routerLink]="['/plans']"><input type="submit" class="btn btn-primary btn-lg" value="New Plan"/></a>
@@ -19,11 +20,11 @@
                 <td> {{line.phonenumber}}</td>
                 <td> {{line.device_Id}}</td>
                 <td> {{userPlan.plan.pricePerLine}}</td>
-               
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> 
+        <label>Your Total Bill is: {{bill}}</label>
 </div>
-
+</div>
 <!-- user.userPlans[indexOfElement] -->

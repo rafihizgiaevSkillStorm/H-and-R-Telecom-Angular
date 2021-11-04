@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { LinesService } from 'src/app/lines.service';
@@ -20,7 +21,8 @@ export class UserAccountComponent implements OnInit {
 
     userPlanTemp! : UserPlan;
     lines!:Lines[];
-  
+    bill?:number=0;
+    isLoaded=false;
   // accountInfo = ACCOUNT;
   // workInfo=WORKACCOUNT;
   
@@ -37,14 +39,18 @@ export class UserAccountComponent implements OnInit {
      this.userService.getByUserId(this.dataService.sharedUser.userId).subscribe(result => {
       this.dataService.sharedUser = result;
 
- 
   this.user.userPlans?.forEach( element => {
     this.linesService.getLinesByUserPlan_Id(element.id!).subscribe(result => {
       element.lines = result;
     });
   });
- 
+  this.isLoaded=true;
  });
+ this.user.userPlans?.forEach( element => {
+   this.bill = +element.plan.pricePerLine * +element.plan.numberOfLines + +this.bill!;
+   console.log(this.bill);
+    });
+    
 } 
 
 }
