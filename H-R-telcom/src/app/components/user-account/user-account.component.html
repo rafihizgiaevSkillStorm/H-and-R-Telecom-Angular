@@ -1,0 +1,24 @@
+<div class="container">
+  <p>
+    <a [routerLink]="['/plans']"><button class="btn btn-lg btn-primary">New Plan</button></a>
+  </p>
+    
+        <div *ngFor="let plan of user.userPlans">
+          <p class="table-title"> {{plan.nickname}} ({{plan.plan.name}})</p>
+          <table class="table table-striped">
+
+            <thead>
+              <tr>
+                <!-- <th scope="col">#</th> -->
+              
+                <th scope="col">Number Of Lines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{plan.plan.numberOfLines}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+</div>

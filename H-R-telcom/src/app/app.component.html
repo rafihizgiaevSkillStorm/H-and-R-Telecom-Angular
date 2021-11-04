@@ -1,0 +1,16 @@
+<body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+
+  <nav class="navbar navbar-light padding-nav">
+    <a class="navbar-brand" href="/login-form">
+      <span class="title">H&R </span><span class="sub-title">WIRELESS</span>
+    </a>
+    <span *ngIf="user" class="sub-title float-right">Welcome, {{user.firstname}}</span>
+  </nav>
+
+  
+
+  <router-outlet></router-outlet>
+
+</body>
