@@ -1,0 +1,25 @@
+h2 {
+	font-family: "Bubblegum Sans";
+	/* text-align: center; */
+	color:black;
+	font-size: 40px;
+	font-variant: normal;
+	font-weight: 600;
+	line-height: 44px;
+	padding: 20px;
+}
+/* .carousel-control-prev-icon{
+	
+	background-image: url('https://apufpel.com.br/assets/img/seta_prim.png')
+ }
+ .carousel-indicators li {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+  } */
+/*  
+.carousel-control-next {
+	   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(1, 1, 1)' width='15' height='20' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
+
+} */
+

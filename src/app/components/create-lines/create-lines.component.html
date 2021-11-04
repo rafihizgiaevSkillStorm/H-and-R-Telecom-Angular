@@ -1,0 +1,53 @@
+
+
+
+<div class="container">
+<div class="row bar">
+  <div class="col-4 ">
+   
+  </div>
+  <div class="col-4 current" >
+    <strong>Choose Phone Number & Device</strong>
+
+  </div>
+  <div class="col-4">
+  </div>
+  <br>
+  <br>
+  <label for="nickname">Plan Nickname:  {{nickname}}</label>
+ <input id="nickname" [(ngModel)]="nickname" placeholder="nickname">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Line #</th>
+        <th scope="col">Available Phonenumbers</th>
+        <th scope="col">Devices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let number of numbers;let indexOfElement=index;">
+        <td>{{indexOfElement+1}}</td>
+        <td class="overflow-hidden">
+          <select id="pN" [(ngModel)]="lines[indexOfElement].phonenumber">
+            <option value="empty">----------</option>
+            <option *ngFor="let phonenumber of phoneNumbers;" [ngValue]="phonenumber">{{phonenumber}}</option>
+          </select>
+        </td>
+        <td class="overflow-hidden">
+          <select [(ngModel)]="lines[indexOfElement].device_Id">
+            <option value="empty">----------</option>
+            <option *ngFor="let device of devices" [ngValue]="device.device_id">{{device.model}}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+  <div class="form-footer">
+  <input type="submit" class="btn btn-primary btn-lg " value="Refresh Phonenumbers" (click)="refreshPhoneNumbers()"/>
+  <input type="submit" class="btn btn-primary btn-lg " value="Save Lines" (click)="saveLines()"/>
+</div>
+
+  <app-devices-table></app-devices-table>
+</div>
+

@@ -25,4 +25,7 @@ export class UsersService {
   getByUserNameAndPassword(username:String, password:String):Observable<any>{
     return this.httpClient.get(this.url+"/"+username+"/"+password);
   }
+  getByUserId(user_Id?:number):Observable<any>{
+    return this.httpClient.get(this.url + "/" + user_Id );
+  }
 }

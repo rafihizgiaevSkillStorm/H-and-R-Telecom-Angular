@@ -1,18 +1,13 @@
 <div class="container">
 
     <div class="row bar">
-        <div class="col-3 current">
+        <div class="col-4 current">
             <strong>Choose Plan</strong>
         </div>
-        <div class="col-3">
+        <div class="col-4">
 
         </div>
-        <div class="col-3">
-
-        </div>
-        <div class="col-3">
-
-        </div>
+        <div class="col-4">
     </div>
 </div>
 <div class="container">
@@ -28,7 +23,7 @@
                     <p>{{plan.description}}.</p>
                 </div>
                 <div class="form-footer">
-                    <input id="price" type="submit" class="btn btn-card " value="${{plan.pricePerLine}} / Line"
+                    <input id="price" type="submit" class="btn btn-primary btn-lg" value="${{plan.pricePerLine}} / Line"
                         (click)="handleClick(plan)" />
                 </div>
             </div>

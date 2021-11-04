@@ -17,4 +17,5 @@ export class DeviceService {
   getAllDevices(): Observable<any> {
 		return this.httpClient.get(this.url);
 	}
+ 
 }

@@ -4,6 +4,7 @@ import { DataService } from 'src/app/data.service';
 import { Plan } from 'src/app/models/Plan';
 import { PlansService } from 'src/app/plans.service';
 
+
 @Component({
   selector: 'app-planes',
   templateUrl: './planes.component.html',
@@ -22,14 +23,19 @@ export class PlanesComponent implements OnInit {
   }
 
   handleClick(selectedPlan:Plan): void {
-    console.log(selectedPlan);
+
+  
+    this.dataService.newSelectedPlan=selectedPlan;
+    
+
     this.plan=selectedPlan;
-    this.router.navigate(['/????']);
+
+    this.router.navigate(['/createLines']);
     
   }
 
   set plan(plan:Plan) {
-    this.dataService.newSelectedPlan=plan;
+    this.dataService.newSelectedPlan = this.plan;
   }
 
   get plan():Plan {

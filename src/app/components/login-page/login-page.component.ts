@@ -33,7 +33,7 @@ showAlert:Boolean= false;
   }
 
   handleResponse(result: any) {
-    console.log("user login")
+    // console.log("user login")
     if(result) {
       this.user=result;
       this.router.navigate(['/user-account']);
@@ -42,8 +42,8 @@ showAlert:Boolean= false;
       this.showAlert=true;
     }
     
-    console.log(result)
-    console.log(typeof(result));
+    // console.log(result)
+    // console.log(typeof(result));
   }
   get user():User{
     return this.dataService.sharedUser;
