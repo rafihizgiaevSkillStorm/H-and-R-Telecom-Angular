@@ -9,7 +9,7 @@ import { User } from './models/User';
 export class UsersService {
 
   
-  url="http://localhost:8080/user/v1";
+  url="https://api-hrwireless.azurewebsites.net/user/v1";
 
   constructor(private httpClient: HttpClient) { }
 

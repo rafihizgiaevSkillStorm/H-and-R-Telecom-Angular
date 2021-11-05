@@ -3,14 +3,18 @@
 nav {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
+    border-radius: 10px;
+    
 }
 
 .title{
     margin-left: 45px;
     font-size: 40px;
+    color: white;
 }
 .sub-title {
     font-size: 20px;
+    color: white;
 }
 .login-user {
     font-size: 20px;
@@ -19,7 +23,7 @@ nav {
 
 .padding-nav{
     margin: 25px;
-    background-color: lightgray;
+    background-color: #56baed;
    
     padding:1%;
   

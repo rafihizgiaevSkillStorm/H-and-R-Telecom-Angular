@@ -12,8 +12,13 @@ import { UserPlan } from './models/UserPlan';
   providedIn: 'root'
 })
 export class UserPlanService {
-  userPlanLines:{userPlan:UserPlan, lines:Lines[]}[]=[];
-  url="http://localhost:8080/userplan/v1";
+
+   userPlanLines:{userPlan:UserPlan, lines:Lines[]}[]=[];
+
+
+   
+  url="https://api-hrwireless.azurewebsites.net/userplan/v1";
+
 
   constructor(private httpClient: HttpClient, private dataService:DataService) { }
     userPlan:UserPlan = {
