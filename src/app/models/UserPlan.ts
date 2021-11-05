@@ -11,12 +11,10 @@ export class UserPlan{
     plan:Plan;
     nickname?:string;
     user?:User;
-    lines?:Lines[] = [];
 
-    constructor(plan:Plan,user:User, lines?:Lines[]){
+    constructor(plan:Plan,user:User){
         this.plan=plan;
         this.user=user;
-        this.lines = lines;
     }
 
 

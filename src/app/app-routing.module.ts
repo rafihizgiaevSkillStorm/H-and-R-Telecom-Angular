@@ -16,7 +16,8 @@ const routes: Routes = [
   {path:"login-form",component:LoginPageComponent},
   {path:"plans",component:PlanesComponent},
   {path: "all-devices", component: DevicesTableComponent },
-  {path: "createLines", component: CreateLinesComponent }
+  {path: "createLines", component: CreateLinesComponent },
+  {path: "app-user-account", component: UserAccountComponent }
 ];
 
 @NgModule({
