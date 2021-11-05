@@ -10,13 +10,14 @@ import { PlanesComponent } from './components/planes/planes.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login-form', pathMatch: 'full' },
+  {path: '', redirectTo: '/user-account', pathMatch: 'full' },
   {path:"user-account",component:UserAccountComponent},
   {path:"new-user",component:NewUserComponent},
   {path:"login-form",component:LoginPageComponent},
   {path:"plans",component:PlanesComponent},
   {path: "all-devices", component: DevicesTableComponent },
-  {path: "createLines", component: CreateLinesComponent }
+  {path: "createLines", component: CreateLinesComponent },
+  {path: "app-user-account", component: UserAccountComponent }
 ];
 
 @NgModule({

@@ -1,11 +1,11 @@
 <div *ngIf="isLoaded">
-<div class="container">
+<div class="container" (onload)="updateUser()">
   <p>
     <a [routerLink]="['/plans']"><input type="submit" class="btn btn-primary btn-lg" value="New Plan"/></a>
   </p>
     
-        <div *ngFor="let userPlan of user.userPlans; let indexOfElement=index;"  >
-          <p class="table-title"> {{userPlan.nickname}} {{userPlan.plan.name}}  </p>
+        <div *ngFor="let userPlanline of userPlanLines; let indexOfElement=index;"  >
+          <p class="table-title"> Your Plan Name : {{userPlanline.userPlan.nickname}}   </p>
           <table class="table table-striped">
             <thead>
               <tr>
@@ -16,10 +16,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let line of userPlan.lines">
+              <tr *ngFor="let line of userPlanline.lines">
                 <td> {{line.phonenumber}}</td>
                 <td> {{line.device_Id}}</td>
-                <td> {{userPlan.plan.pricePerLine}}</td>
+                <td> {{userPlanline.userPlan.plan.pricePerLine}}</td>
               </tr>
             </tbody>
           </table>
