@@ -9,8 +9,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DeviceService {
-
-  url ='http://localhost:8080/devices/v1/';
+  //Azure
+  url ='https://api-hrwireless.azurewebsites.net/devices/v1/';
+  //url ='http://localhost:8080/devices/v1/';
 
   constructor(private httpClient: HttpClient) { }
 

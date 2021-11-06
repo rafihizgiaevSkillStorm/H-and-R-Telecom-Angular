@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PlansService {
-
-  url="http://localhost:8080/plans/v1";
+  url="https://api-hrwireless.azurewebsites.net/plans/v1";
+  //url="http://localhost:8080/plans/v1";
 
   constructor(private httpClient: HttpClient) { }
 
